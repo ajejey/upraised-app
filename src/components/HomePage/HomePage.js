@@ -7,13 +7,13 @@ import { useRouter } from 'next/navigation'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-function HomePage() {
+function HomePage({ user }) {
     const router = useRouter()
     const [start, setStart] = useState(false)
-    const { data, error } = useSWR(start ? '/api/quiz' : null, fetcher)
-    const { questions, setQuestions } = useContext(GlobalContext)
+    const { data: questionsData, error } = useSWR(start ? '/api/quiz' : null, fetcher)
+    const { questions, setQuestions, userData, setUserData } = useContext(GlobalContext)
 
-    console.log("quizQuestions", data)
+    console.log("quizQuestions", questionsData)
 
     const handleStartClick = () => {
         setStart(true)
@@ -22,18 +22,19 @@ function HomePage() {
     console.log("questions", questions)
 
     useEffect(() => {
-        if (data) {
-            setQuestions(data)
-            router.push(`/question/${data[0].id}`)
+        if (questionsData) {
+            setUserData(user)
+            setQuestions(questionsData)
+            router.push(`/questions/${questionsData[0].id}`)
         }
-    }, [data])
+    }, [questionsData])
 
 
     return (
         <div className={styles.pageContainer}>
             <h1>Upraised</h1>
             <h3>Quiz</h3>
-            <button onClick={handleStartClick}>Start</button>
+            <button className='navButton' onClick={handleStartClick}>Start</button>
         </div>
     )
 }

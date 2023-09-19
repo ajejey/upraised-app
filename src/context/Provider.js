@@ -5,10 +5,16 @@ export const GlobalContext = createContext({});
 
 export const GlobalProvider = ({ children }) => {
     const [questions, setQuestions] = useState([]);
+    const [userData, setUserData] = useState({})
+    const [result, setResult] = useState({})
     return (
         <GlobalContext.Provider value={{
             questions,
-            setQuestions
+            setQuestions,
+            userData,
+            setUserData,
+            result,
+            setResult
         }}>
             {children}
         </GlobalContext.Provider>
