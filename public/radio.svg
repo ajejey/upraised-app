@@ -1,0 +1,30 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="48" height="48" fill="#F2F2F2"/>
+<g id="Question with selected choices" clip-path="url(#clip0_0_1)">
+<rect width="750" height="1624" transform="translate(-80 -668)" fill="white"/>
+<g id="&#231;&#159;&#169;&#229;&#189;&#162;&#229;&#164;&#135;&#228;&#187;&#189; 3">
+<rect x="-80" y="-668" width="750" height="1624" fill="#AF9CF3" style="mix-blend-mode:multiply"/>
+</g>
+<g id="&#231;&#159;&#169;&#229;&#189;&#162;" opacity="0.0222749" filter="url(#filter0_f_0_1)">
+<path d="M-80 -374C-80 -407.137 -53.1371 -434 -20 -434H610C643.137 -434 670 -407.137 670 -374V876H-80V-374Z" fill="black"/>
+</g>
+<path id="&#231;&#159;&#169;&#229;&#189;&#162;&#229;&#164;&#135;&#228;&#187;&#189; 8" d="M-80 -374C-80 -407.137 -53.1371 -434 -20 -434H610C643.137 -434 670 -407.137 670 -374V956H-80V-374Z" fill="white"/>
+<g id="Option 1" clip-path="url(#clip1_0_1)">
+<rect id="&#231;&#159;&#169;&#229;&#189;&#162;_2" x="-40" y="-58" width="670" height="160" rx="20" fill="#F3F4FA"/>
+<path id="&#230;&#164;&#173;&#229;&#156;&#134;&#229;&#189;&#162;" opacity="0.0829846" d="M46 24C46 36.1503 36.1503 46 24 46C11.8497 46 2 36.1503 2 24C2 11.8497 11.8497 2 24 2C36.1503 2 46 11.8497 46 24Z" stroke="black" stroke-width="4"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_0_1" x="-188.731" y="-542.731" width="967.463" height="1527.46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="54.3656" result="effect1_foregroundBlur_0_1"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="750" height="1624" fill="white" transform="translate(-80 -668)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="670" height="160" fill="white" transform="translate(-40 -58)"/>
+</clipPath>
+</defs>
+</svg>
