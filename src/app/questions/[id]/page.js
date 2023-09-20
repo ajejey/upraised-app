@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from './question.module.css'
 import { GlobalContext } from '@/context/Provider'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 function page({ params }) {
     const router = useRouter()
@@ -61,15 +62,6 @@ function page({ params }) {
         }
     }
 
-    // const handleFinishClick = () => {
-    //     if (selectedOption !== null) {
-    //         router.push('/result');
-    //     } else {
-    //         alert("Please select an option before moving to the next question.");
-    //     }
-
-    // }
-
     useEffect(() => {
         if (questions.length === 0) {
             router.push('/');
@@ -82,28 +74,53 @@ function page({ params }) {
     };
 
     return (
-        <div className={styles.pageContainer}>
-            <h1>{params.id} / {questions?.length}</h1>
-            <h2>{questions?.[params.id - 1]?.question}</h2>
-            <div>
-                {questions?.[params.id - 1]?.options.map((option, index) => (
-                    <div key={index}>
-                        <input
-                            type="radio"
-                            name="options"
-                            id={`option${index}`}
-                            value={option}
-                            checked={selectedOption === option}
-                            onChange={() => handleOptionChange(index)}
-                        />
-                        <label htmlFor={`option${index}`}>{option}</label>
+        <div className={styles.questionsBackground}>
+            <div className={styles.pageContainer}>
+                <div className={styles.progress}>
+                    <h1>{params.id} / {questions?.length}</h1>
+                </div>
+                <h2 className={styles.questionText}>{questions?.[params.id - 1]?.question}</h2>
+
+                <div className={styles.optionsContainer}>
+                    {questions?.[params.id - 1]?.options.map((option, index) => (
+                        <label key={index} htmlFor={`option${index}`} className={styles.option}>
+
+                            <input
+                                type="radio"
+                                name="options"
+                                id={`option${index}`}
+                                value={option}
+                                checked={selectedOption === option}
+                                onChange={() => handleOptionChange(index)}
+                            />
+                            <span className={styles.optionText}>{option}</span>
+
+                        </label>
+                    ))}
+                </div>
+                {parseInt(params.id) === questions?.length
+                    ? <div
+                        className='navButton'
+                        onClick={() => handleNextClick('finish')}
+                    >
+                        <pre></pre>
+                        <span>Finish</span>
+                        <span>
+                            <Image src="/right-arrow.png" width={20} height={20} />
+                        </span>
                     </div>
-                ))}
+                    : <div
+                        className='navButton'
+                        onClick={() => handleNextClick('next')}
+                    >
+                        <pre></pre>
+                        <span>Next</span>
+                        <span>
+                            <Image src="/right-arrow.png" width={20} height={20} />
+                        </span>
+                    </div>
+                }
             </div>
-            {parseInt(params.id) === questions?.length
-                ? <button onClick={() => handleNextClick('finish')}>Finish</button>
-                : <button onClick={() => handleNextClick('next')}>Next </button>
-            }
         </div>
     )
 }

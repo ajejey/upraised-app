@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display&family=Poppins:wght@800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@200;600;700;800;900&family=Playfair+Display&family=Poppins:wght@800&display=swap');
+
 :root {
   --max-width: 750px;
   --border-radius: 12px;
@@ -99,19 +101,41 @@ a {
 }
 
 .navButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 7.5rem;
+  /* height: 7.5rem; */
+  /* height: 7.3%; */
+  /* height: clamp(6rem, 7.3%, 7.5rem); */
+  height: clamp(5rem, 7.3vh, 7.5rem);
   padding: 0 3.75rem;
   flex-shrink: 0;
   border-radius: 5rem;
   background: #FF3B3F;
   color: #FFF;
   font-family: Nunito;
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  /* font-size: clamp(1.5rem, 3%, 3rem); */
+  font-size: clamp(36px, 3vh, 48px);
   font-style: normal;
   font-weight: 900;
   line-height: 4.1875rem;
   border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navButton:hover {
+  background: #d32f33;
+}
+
+.navButton:active {
+  /* Click animation styles */
+  transform: translateY(2px);
+  /* Push the button down slightly */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add a subtle box shadow */
 }
 
 @media (min-width: 576px) {

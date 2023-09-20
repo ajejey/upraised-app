@@ -48,7 +48,14 @@ function HomePage({ user }) {
                     <path fillRule="evenodd" clipRule="evenodd" d="M216 396C335.294 396 432 307.352 432 198C432 88.6476 335.294 0 216 0C96.7065 0 0 88.6476 0 198C0 307.352 96.7065 396 216 396Z" fill="white" />
                 </svg>
             </div>
-            <button className='navButton' onClick={handleStartClick}>Start</button>
+            <div
+                className='navButton'
+                onClick={handleStartClick}
+            >
+                <pre></pre>
+                <span>Start</span>
+                <pre></pre>
+            </div>
         </div>
     )
 }

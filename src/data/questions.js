@@ -1,7 +1,7 @@
 const questions = [
     {
         id: 1,
-        question: 'What is your favorite color?',
+        question: 'How do you judge what should be added in the next version of the app?',
         answer: 'Blue',
         options: ['Red', 'Blue', 'Green', 'Yellow'],
         points: 25
