@@ -22,7 +22,7 @@ cd upraised-app
 Create a .env file in the root folder add environment variable
 
 ```
-NEXT_PUBLIC_API_URL=http:localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 Install required packages
