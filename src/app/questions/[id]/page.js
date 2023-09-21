@@ -145,8 +145,16 @@ function page({ params }) {
                 </div>
                 <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.questionText}>{questions?.[params.id - 1]?.question}</motion.h2>
 
-                {questions?.[params.id - 1]?.image && <Image src={questions?.[params.id - 1]?.image} alt="question" width={400} height={400} />}
-
+                {questions?.[params.id - 1]?.image && (
+                    <div className={styles.questionImage}>
+                        <Image                            
+                            src={questions?.[params.id - 1]?.image}
+                            alt="question"
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </div>
+                )}
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.optionsContainer}>
                     {questions?.[params.id - 1]?.options.map((option, index) => (
                         <label key={index} htmlFor={`option${index}`} className={styles.option} style={{ border: selectedOption === option ? "4.444px solid #44B77B" : "none", backgroundColor: selectedOption === option ? "white" : "#F3F4FA" }}>

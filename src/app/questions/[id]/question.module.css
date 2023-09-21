@@ -60,7 +60,7 @@
     font-weight: 900;
     line-height: 3.5rem;
     z-index: 3;
-    margin-top: clamp(5rem, 9.85vh, 10rem);
+    margin-top: clamp(2rem, 9.85vh, 10rem);
 }
 
 .totalQuestions {
@@ -94,6 +94,12 @@
 
 }
 
+.questionImage{
+    position: relative;
+    height: clamp(5rem, 25vh, 30rem);
+    aspect-ratio: 1;
+}
+
 .optionText {
     color: #000;
     font-family: 'Nunito', sans-serif;
@@ -122,4 +128,22 @@
 /* Style for the checked state */
 .option input:checked+.checkmark {
     background-image: url('/radioSelected.svg');
+}
+
+@media (max-width: 750px) {
+    .option {
+        padding: 0 0.5rem;
+    }
+    .checkmark {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .optionText{
+        font-size: 1.2rem;
+    }
+    .questionText {
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
 }
