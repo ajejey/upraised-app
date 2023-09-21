@@ -2,7 +2,7 @@ import React from "react";
 import HomePage from "../components/HomePage/HomePage";
 const getData = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/user`, {
+    `${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
     cache: "no-store",
   }
   );
