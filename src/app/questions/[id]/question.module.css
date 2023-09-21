@@ -60,7 +60,10 @@
     font-weight: 900;
     line-height: 3.5rem;
     z-index: 3;
-    margin-top: clamp(2rem, 9.85vh, 10rem);
+    /* margin-top: clamp(7drem, 9.85vh, 10rem); */
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    padding-top: clamp(5rem, 9.85vh, 10rem);
 }
 
 .totalQuestions {
@@ -142,7 +145,8 @@
         font-size: 1.2rem;
     }
     .questionText {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
+        /* padding-top: 2rem; */
         font-size: 1.5rem;
         line-height: 2rem;
     }
