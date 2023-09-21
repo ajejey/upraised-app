@@ -15,13 +15,17 @@ Go to the root folder
 cd upraised-app
 ```
 
+Create a .env file in the root folder add environment variable
+
+```
+NEXT_PUBLIC_API_URL=http:localhost:3000
+```
+
 Install required packages
 
 ```
 npm install
 ```
-
-Environment variables are not required for this project
 
 To run the development server
 
