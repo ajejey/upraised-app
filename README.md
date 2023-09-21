@@ -1,6 +1,10 @@
 # Quiz App
 This project is built with Next JS 13.4 using the App router. 
 
+The deployed App can be seen here:
+
+[https://quiz-app-ajejey.vercel.app/](https://quiz-app-ajejey.vercel.app/)
+
 ## Getting Started
 
 Clone the repository
