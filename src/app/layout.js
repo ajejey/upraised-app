@@ -8,6 +8,22 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Quiz App',
   description: 'A fun Quiz app with Next.js and Framer Motion',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IE',
+    url: 'https://quiz-app-ajejey.vercel.app/',
+    title: 'Quiz App',
+    description: 'A fun Quiz app with Next.js and Framer Motion',
+    images: [
+      {
+        url: 'https://quiz-app-ajejey.vercel.app/upraisedLogo.svg', 
+        width: 800,
+        height: 600,
+        alt: 'Quiz App',
+      }
+    ],
+  },
+  
 }
 
 export default function RootLayout({ children }) {
