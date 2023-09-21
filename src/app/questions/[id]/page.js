@@ -12,17 +12,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function page({ params }) {
     const router = useRouter()
-    const { questions, userData, setUserData, setResult } = useContext(GlobalContext)
-    const [selectedOption, setSelectedOption] = useState(null); // State to track the selected option
+    const { questions, userData, setUserData, setResult, result } = useContext(GlobalContext)
+    const [selectedOption, setSelectedOption] = useState(null);
     const [startTime, setStartTime] = useState(null);
-    // console.log("params", params.id)
-    // console.log("questions", questions)
-    console.log("userData ", userData)
+    // console.log("userData ", userData)
 
     const draw = {
         hidden: { pathLength: ((parseInt(params.id) - 1) / questions?.length), opacity: 0 },
         visible: (i) => {
             const delay = 0;
+            // calculate the length of the path based on the number of questions and current question
             const completed = (parseInt(params.id) / questions?.length)
             return {
                 pathLength: completed,
@@ -91,22 +90,42 @@ function page({ params }) {
         }
     }
 
-    useEffect(() => {
-        if (questions.length === 0) {
-            router.push('/');
-        }
-        setStartTime(new Date());
-
-        return () => {
-            setStartTime(null);
-        }
-    }, []);
-
+    // Function to set the selected option to the state
     const handleOptionChange = (optionIndex) => {
         console.log("optionIndex", optionIndex)
         let selectedAnswer = questions[parseInt(params.id) - 1].options[optionIndex];
         setSelectedOption(selectedAnswer);
     };
+
+
+    useEffect(() => {
+        // Redirect to home page if there are no questions in the global state       
+        if (questions.length === 0) {
+            router.push('/');
+        }
+
+        // Redirect to result page if the user has already finished and received a result
+        if (Object.keys(result).length) {
+            router.push('/result');
+        }
+
+        /* Set the selected option if there is user data and an answer for the current question. 
+        This will be useful if user decides to go back to a previous question */
+        if (Object.keys(userData).length && userData.answers[parseInt(params.id) - 1].answer) {
+            setSelectedOption(userData.answers[parseInt(params.id) - 1].answer);
+        }
+
+        // For each question register a start time
+        setStartTime(new Date());
+
+
+        // Cleanup the start time when the user moves to the next question
+        return () => {
+            setStartTime(null);
+        }
+    }, []);
+
+
 
     return (
         <div className={styles.questionsBackground}>
@@ -124,11 +143,11 @@ function page({ params }) {
                         <span className={styles.totalQuestions}>/{questions?.length}</span>
                     </div>
                 </div>
-                <h2 className={styles.questionText}>{questions?.[params.id - 1]?.question}</h2>
+                <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.questionText}>{questions?.[params.id - 1]?.question}</motion.h2>
 
                 {questions?.[params.id - 1]?.image && <Image src={questions?.[params.id - 1]?.image} alt="question" width={400} height={400} />}
 
-                <div className={styles.optionsContainer}>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.optionsContainer}>
                     {questions?.[params.id - 1]?.options.map((option, index) => (
                         <label key={index} htmlFor={`option${index}`} className={styles.option} style={{ border: selectedOption === option ? "4.444px solid #44B77B" : "none", backgroundColor: selectedOption === option ? "white" : "#F3F4FA" }}>
                             <input
@@ -143,7 +162,7 @@ function page({ params }) {
                             <span className={styles.optionText}>{option}</span>
                         </label>
                     ))}
-                </div>
+                </motion.div>
                 {parseInt(params.id) === questions?.length
                     ? <div
                         className='navButton'

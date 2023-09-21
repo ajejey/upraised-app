@@ -12,7 +12,7 @@ const questions = [
         question: 'CSS is for?',
         answer: 'Styling web pages',
         image: '/questionImage.png',
-        options: [ 'Managing logic', 'Styling web pages', 'Staring at screen'],
+        options: [ 'Styling web pages', 'Staring at screen'],
         points: 25
     },
     {

@@ -14,7 +14,7 @@ export const GlobalProvider = ({ children }) => {
             userData,
             setUserData,
             result,
-            setResult
+            setResult,
         }}>
             {children}
         </GlobalContext.Provider>

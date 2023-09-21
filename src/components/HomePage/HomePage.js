@@ -12,10 +12,11 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 function HomePage({ user }) {
     const router = useRouter()
     const [start, setStart] = useState(false)
+    // use swr library to fetch data. This helps in caching the data
     const { data: questionsData, error } = useSWR(start ? '/api/quiz' : null, fetcher)
-    const { questions, setQuestions, userData, setUserData } = useContext(GlobalContext)
+    const { questions, setQuestions, userData, setUserData, setResult, result } = useContext(GlobalContext)
 
-    console.log("quizQuestions", questionsData)
+    // console.log("quizQuestions", questionsData)
 
     const handleStartClick = () => {
         setStart(true)
@@ -29,11 +30,12 @@ function HomePage({ user }) {
             setQuestions(questionsData)
             router.push(`/questions/${questionsData[0].id}`)
         }
+        setResult({})
     }, [questionsData])
 
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.pageContainer}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={styles.pageContainer}>
             <div>
                 <Image
                     src="/logo.png"

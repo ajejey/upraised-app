@@ -73,7 +73,7 @@ function Result() {
             <div className={styles.pageContainer}>
                 <h1 className={styles.title}>Your result</h1>
                 <div className={styles.progress}>
-                    <motion.svg initial="hidden" animate="visible" width="490" height="490" viewBox="0 0 500 500">
+                    <motion.svg initial="hidden" animate="visible" width="100%" height="100%" viewBox="0 0 500 500">
                         <g transform="rotate(150, 240, 240)">
                             <motion.circle variants={grayBackground} cx="230" cy="240" r="180" strokeWidth="100" fill="transparent" stroke="#EBEDF5" />
                         </g>
