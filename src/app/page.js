@@ -8,6 +8,7 @@ const getData = async () => {
   );
 
   if (!res.ok) {
+    console.log("res ", res);
     throw new Error("Failed to fetch quiz questions");
   }
 
