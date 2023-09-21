@@ -34,6 +34,23 @@
     z-index: 2;
 }
 
+.progress div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.questionNumber {
+    color: #000;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 8rem;
+}
+
 .questionText {
     color: #000;
     font-family: 'Nunito', sans-serif;
@@ -43,6 +60,16 @@
     line-height: 3.5rem;
     z-index: 3;
     margin-top: clamp(5rem, 9.85vh, 10rem);
+}
+
+.totalQuestions {
+    opacity: 0.796;
+    color: #999;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 6rem;
 }
 
 .optionsContainer {
@@ -94,4 +121,3 @@
 .option input:checked+.checkmark {
     background-image: url('/radioSelected.svg');
 }
-

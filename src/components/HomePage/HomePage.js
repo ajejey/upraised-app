@@ -5,6 +5,7 @@ import useSWR from 'swr'
 import { GlobalContext } from '@/context/Provider'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -32,7 +33,7 @@ function HomePage({ user }) {
 
 
     return (
-        <div className={styles.pageContainer}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.pageContainer}>
             <div>
                 <Image
                     src="/logo.png"
@@ -56,7 +57,7 @@ function HomePage({ user }) {
                 <span>Start</span>
                 <pre></pre>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -8,6 +8,17 @@
     z-index: 0;
 }
 
+.title {
+    color: #000;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 3.5rem;
+    /* 100% */
+}
+
 .pageContainer {
     display: flex;
     flex-direction: column;
@@ -55,4 +66,35 @@
     font-style: normal;
     font-weight: 600;
     line-height: 2.8125rem;
+}
+
+.questionNumber {
+    color: #000;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 8rem;
+}
+
+.progress {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding-top: 2.5rem;
+    /* width: 15.625rem; */
+    /* width: clamp(10rem, 15.4vh, 15.625rem);
+    height: clamp(10rem, 15.4vh, 15.625rem); */
+    z-index: 2;
+}
+
+
+.progress div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -45%);
 }

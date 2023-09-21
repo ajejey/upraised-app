@@ -1,32 +1,37 @@
 const questions = [
     {
         id: 1,
-        question: 'How do you judge what should be added in the next version of the app?',
-        answer: 'Blue',
-        options: ['Red', 'Blue', 'Green', 'Yellow'],
+        question: 'What does HTML stand for?',
+        image: '',
+        answer: 'Hypertext Markup Language',
+        options: ['Hyper Text Makeup Language', 'Hypertext Markup Language', 'Hyper Transfer Markup Language', 'Hilarious Text Markup Language'],
         points: 25
     },
     {
         id: 2,
-        question: 'What is your favorite animal?',
-        answer: 'Dog',
-        options: ['Dog', 'Cat', 'Tiger', 'Lion'],
+        question: 'CSS is for?',
+        answer: 'Styling web pages',
+        image: '/questionImage.png',
+        options: [ 'Managing logic', 'Styling web pages', 'Staring at screen'],
         points: 25
     },
     {
         id: 3,
-        question: 'What is your favorite food?',
-        answer: 'Pizza',
-        options: ['Pizza', 'Burger', 'Pasta', 'Sandwich'],
+        question: 'Which of the following is not a programming language?',
+        answer: 'CSS',
+        image: '',
+        options: ['JavaScript', 'Python', 'HTML', 'CSS'],
         points: 25
     },
     {
         id: 4,
-        question: 'What is your favorite movie?',
-        answer: 'The Shawshank Redemption',
-        options: ['The Shawshank Redemption', 'The Godfather', 'The Dark Knight', 'The Matrix'],
+        question: 'What does the JavaScript function `alert()` do?',
+        answer: 'Display a popup message',
+        image: '',
+        options: ['Add two numbers', 'Display a popup message', 'Change background color', 'Make coffee'],
         points: 25
     }
-]
+];
+
 
 export default questions
