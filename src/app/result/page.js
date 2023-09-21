@@ -72,6 +72,7 @@ function Result() {
         <div className={styles.questionsBackground}>
             <div className={styles.pageContainer}>
                 <h1 className={styles.title}>Your result</h1>
+                {/* Result SVG with animation */}
                 <div className={styles.progress}>
                     <motion.svg initial="hidden" animate="visible" width="100%" height="100%" viewBox="0 0 500 500">
                         <g transform="rotate(150, 240, 240)">
@@ -102,9 +103,7 @@ function Result() {
                 </div>
                 <div className={styles.optionsContainer}>
                     <div className={`${styles.option} ${styles.correct} ${styles.optionText}`}>
-
                         <Image src="/correct.svg" alt="correct" width={32} height={32} />
-
                         <span>
                             {result.correctAnswers !== undefined ? result.correctAnswers : 0}
                         </span>
@@ -113,9 +112,7 @@ function Result() {
                         </span>
                     </div>
                     <div className={`${styles.option} ${styles.incorrect} ${styles.optionText}`}>
-
                         <Image src="/incorrect.svg" alt="incorrect" width={32} height={32} />
-
                         <span>{result.correctAnswers !== undefined ? questions.length - result.correctAnswers : 0}</span>
                         <span>
                             Incorrect
@@ -131,7 +128,6 @@ function Result() {
                     <span>Start Again</span>
                     <pre></pre>
                 </div>
-                {/* <button onClick={() => router.push('/')}>Start Again</button> */}
             </div>
         </div>
     )

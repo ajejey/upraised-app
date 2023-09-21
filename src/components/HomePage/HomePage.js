@@ -12,18 +12,18 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 function HomePage({ user }) {
     const router = useRouter()
     const [start, setStart] = useState(false)
+
     // use swr library to fetch data. This helps in caching the data
     const { data: questionsData, error } = useSWR(start ? '/api/quiz' : null, fetcher)
     const { questions, setQuestions, userData, setUserData, setResult, result } = useContext(GlobalContext)
 
-    // console.log("quizQuestions", questionsData)
 
     const handleStartClick = () => {
         setStart(true)
     }
 
-    console.log("questions", questions)
-
+    /* Once the user clicks the start button, start state is changed to true and data is fetched using swr, 
+       once the questionsData is received, questions are set to global state and user navigates to the questions page */
     useEffect(() => {
         if (questionsData) {
             setUserData(user)

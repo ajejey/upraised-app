@@ -16,7 +16,6 @@
     font-style: normal;
     font-weight: 800;
     line-height: 3.5rem;
-    /* 100% */
 }
 
 .pageContainer {
@@ -50,12 +49,10 @@
 
 .correct {
     background: #44b77c25;
-    /* opacity: 0.1167; */
 }
 
 .incorrect {
     border-radius: 1.25rem;
-    /* opacity: 0.1167; */
     background: #ff3b3e31;
 }
 
@@ -72,8 +69,8 @@
     color: #000;
     text-align: center;
     font-family: 'Nunito', sans-serif;
-    /* font-size: 4vh; */
-    font-size: clamp(36px, 4vh, 48px);
+    /* font-size: clamp(36px, 4vh, 48px); */
+    font-size: 4vh;
     font-style: italic;
     font-weight: 900;
     line-height: 8rem;
@@ -88,9 +85,6 @@
     padding-top: 2.5rem;
     height: 30vh;
     aspect-ratio: 1;
-    /* width: 15.625rem; */
-    /* width: clamp(10rem, 15.4vh, 15.625rem);
-    height: clamp(10rem, 15.4vh, 15.625rem); */
     z-index: 2;
 }
 
@@ -99,5 +93,5 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-55%, -45%);
+    transform: translate(-50%, -40%);
 }

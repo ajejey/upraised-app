@@ -15,6 +15,7 @@ const getData = async () => {
 };
 
 export default async function Home() {
+  // Fetch user data when the home page loads. This is to mimic user login. Assuming user is logged in and data is receiveved from the server
   const user = await getData();
 
   return (

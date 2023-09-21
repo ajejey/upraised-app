@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* Wrap the entire app in the GlobalProvider to access global states, and FramerLayout */}
         <GlobalProvider>
           <FramerLayout>
             {children}
